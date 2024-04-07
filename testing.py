@@ -31,7 +31,6 @@ class ProductManagement:
     def register_product(product_name: str):
         db_manager = DatabaseSessionManager.instance()
         db_manager.init_sync()
-
         with db_manager.session() as session:
             product = Product(product_name=product_name)
             session.add(product)
